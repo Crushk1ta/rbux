@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobuxGiveawayHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1i8PGW.img?w=640&h=360&m=6'); /* Update this path with your image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 5%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 4vw; /* Dynamic size based on viewport width */
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5vw; /* Responsive text size */
+        }
+
+        .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        .rules-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background: rgba(0, 0, 0, 0.6); /* Slightly dark background */
+            color: white;
+            text-align: center;
+        }
+
+        .rules-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .rules-container h2 {
+            font-size: 3vw;
+            margin-bottom: 20px;
+        }
+
+        .rules-list {
+            text-align: left;
+            font-size: 1.8vw;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .input-container {
+            margin-top: 20px;
+        }
+
+        .username-input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2vw;
+            margin-bottom: 15px;
+        }
+
+        .submit-button {
+            padding: 12px 30px;
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5vw;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hover 3D Effect */
+        .submit-button:hover {
+            transform: translateY(-5px); /* Slightly lifts the button */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Adds a shadow for 3D effect */
+        }
+
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #ok-button {
+            padding: 10px 20px;
+            background-color: #008CBA; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #ok-button:hover {
+            background-color: #007B9A;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>RobuxGiveawayHub</h1>
+            </div>
+            <ul class="nav-links" style="display: none;">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="rules-section">
+        <div class="rules-container">
+            <h2>How to Receive Robux</h2>
+            <ol class="rules-list">
+                <li>First, click the <strong><a href="https://www.roblox.com/users/7319821950/profile" target="_blank">Follow</a></strong> button.</li>
+                <li>Second, share this website with 5 or 10 friends to receive <strong>Robux</strong>.</li>
+                <li>Third, input your Roblox username in the field below.</li>
+            </ol>
+
+            <!-- Robux Selection -->
+            <div class="robux-options">
+                <h3>Select Robux Amount</h3>
+                <div class="robux-boxes">
+                    <label class="robux-box">
+                        <input type="radio" name="robux" value="50">
+                        <span class="robux-label">50 Robux</span>
+                    </label>
+
+                    <label class="robux-box">
+                        <input type="radio" name="robux" value="100">
+                        <span class="robux-label">100 Robux</span>
+                    </label>
+
+                    <label class="robux-box">
+                        <input type="radio" name="robux" value="150">
+                        <span class="robux-label">150 Robux</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Input for Roblox Username -->
+            <div class="input-container">
+                <input type="text" placeholder="Enter your Roblox Username: @Ralt0m" class="username-input" id="username-input">
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-button" id="submit-button">Submit</button>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <p style="font: bold ; color: black;">You will receive your Robux after 30 days if you follow the rules.</p>
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        
+            <script>
+                document.getElementById('submit-button').addEventListener('click', function() {
+                    const usernameInput = document.getElementById('username-input').value.trim();
+                    const robuxOptions = document.querySelectorAll('input[name="robux"]');
+                    let robuxSelected = false;
+
+                    // Check if any Robux option is selected
+                    robuxOptions.forEach(option => {
+                        if (option.checked) {
+                            robuxSelected = true;
+                        }
+                    });
+
+                    // Validation
+                    if (usernameInput === "") {
+                        alert("Please enter your Roblox username."); // Alert if the input is empty
+                    } else if (!robuxSelected) {
+                        alert("Please select a Robux amount."); // Alert if no Robux amount is selected
+                    } else {
+                        document.getElementById('popup').style.display = 'flex'; // Show the popup if input is filled and Robux is selected
+                    }
+                });
+
+                document.getElementById('ok-button').addEventListener('click', function() {
+                    document.getElementById('popup').style.display = 'none'; // Hide the popup
+                });
+            </script>
+        </div>
+    </section>
+</body>
+</html>
